@@ -1,0 +1,1431 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%spark\nval RDD2 = sc.textFile(\"/user/zeppelin/busra/*6.log\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:00:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mRDD2\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m = /user/zeppelin/busra/*6.log MapPartitionsRDD[703] at textFile at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625483786593_229946068",
+      "id": "paragraph_1625483786593_229946068",
+      "dateCreated": "2021-07-05T11:16:26+0000",
+      "dateStarted": "2021-07-13T08:00:39+0000",
+      "dateFinished": "2021-07-13T08:00:39+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:52"
+    },
+    {
+      "text": "%spark\nRDD2.count",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:00:42+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres178\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 6695\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=170",
+              "$$hashKey": "object:492"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625483806125_1544661120",
+      "id": "paragraph_1625483806125_1544661120",
+      "dateCreated": "2021-07-05T11:16:46+0000",
+      "dateStarted": "2021-07-13T08:00:43+0000",
+      "dateFinished": "2021-07-13T08:00:43+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:53"
+    },
+    {
+      "text": "%spark\nval groupedRDD=RDD2.map(line=>line.split(\" \")).map(f=>(f(2),f(0))).groupByKey",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:00:46+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mgroupedRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Iterable[String])]\u001b[0m = ShuffledRDD[706] at groupByKey at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625903966326_841797768",
+      "id": "paragraph_1625903966326_841797768",
+      "dateCreated": "2021-07-10T07:59:26+0000",
+      "dateStarted": "2021-07-13T08:00:46+0000",
+      "dateFinished": "2021-07-13T08:00:46+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:54"
+    },
+    {
+      "text": "%spark\nfor (i <- groupedRDD.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:00:49+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(2828,CompactBuffer(167.173.190.72, 167.173.190.72))\n(21364,CompactBuffer(52.71.22.30, 52.71.22.30))\n(91200,CompactBuffer(95.240.116.112, 95.240.116.112))\n(49368,CompactBuffer(13.32.56.61, 13.32.56.61))\n(90742,CompactBuffer(36.19.49.88, 36.19.49.88, 36.19.49.88, 36.19.49.88))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=171",
+              "$$hashKey": "object:513"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625904481089_327696024",
+      "id": "paragraph_1625904481089_327696024",
+      "dateCreated": "2021-07-10T08:08:01+0000",
+      "dateStarted": "2021-07-13T08:00:49+0000",
+      "dateFinished": "2021-07-13T08:00:50+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:55"
+    },
+    {
+      "text": "%spark\nval counts = RDD2.map(line => (line.split(' ')(2),1)).reduceByKey((x,y) => x+y)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:01:01+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcounts\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Int)]\u001b[0m = ShuffledRDD[708] at reduceByKey at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625903395280_89621003",
+      "id": "paragraph_1625903395280_89621003",
+      "dateCreated": "2021-07-10T07:49:55+0000",
+      "dateStarted": "2021-07-13T08:01:01+0000",
+      "dateFinished": "2021-07-13T08:01:01+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:56"
+    },
+    {
+      "text": "%spark\nfor (i <- counts.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-10T08:12:17+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(2828,2)\n(21364,2)\n(91200,2)\n(49368,2)\n(9100,8)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=142",
+              "$$hashKey": "object:534"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625491768562_1038830802",
+      "id": "paragraph_1625491768562_1038830802",
+      "dateCreated": "2021-07-05T13:29:28+0000",
+      "dateStarted": "2021-07-10T08:12:17+0000",
+      "dateFinished": "2021-07-10T08:12:17+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:57"
+    },
+    {
+      "text": "%sh\ngit clone https://github.com/BusraTurker/Join.git",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-05T14:03:43+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Cloning into 'Join'...\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625491998540_686234284",
+      "id": "paragraph_1625491998540_686234284",
+      "dateCreated": "2021-07-05T13:33:18+0000",
+      "dateStarted": "2021-07-05T14:03:43+0000",
+      "dateFinished": "2021-07-05T14:03:45+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:58"
+    },
+    {
+      "text": "%sh\nls",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-05T14:05:48+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Join\nairlines.dat\nairlines.dat.1\nairlines.dat.2\nairlines.dat.3\nairlines.dat.4\nairlines.dat.5\nairports.dat\nairports.dat.1\nairports.dat.2\nairports.dat.3\nairports.dat.4\nairports.dat.5\nairports.dat.6\nalper_airlines.dat\nalper_airports.dat\nalper_routes.dat\nalperonal\nbusra\nbusra_airlines.dat\nbusra_airports.dat\nbusra_routes.dat\nbusraturker\nhaber.txt\nhabertuna.txt\nkursat_airlines.dat\nkursat_airports.dat\nkursat_routes.dat\nkursatcinar\nmb_airlines.dat\nmb_airports.dat\nmb_routes.dat\nneslihan\nnk_airlines.dat\nnk_airports.dat\nnk_routes.dat\nnotebook\nramazan\nroutes.dat\nroutes.dat.1\nroutes.dat.2\nroutes.dat.3\nroutes.dat.4\nroutes.dat.5\ntuna\nweblog\nyy_airlines.dat\nyy_airports.dat\nyy_routes.dat\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625491800973_477696400",
+      "id": "paragraph_1625491800973_477696400",
+      "dateCreated": "2021-07-05T13:30:00+0000",
+      "dateStarted": "2021-07-05T14:05:48+0000",
+      "dateFinished": "2021-07-05T14:05:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:59"
+    },
+    {
+      "text": "%sh\nhdfs dfs -put Join /user/zeppelin/busra/\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-05T14:06:47+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625493944458_675371603",
+      "id": "paragraph_1625493944458_675371603",
+      "dateCreated": "2021-07-05T14:05:44+0000",
+      "dateStarted": "2021-07-05T14:06:47+0000",
+      "dateFinished": "2021-07-05T14:06:50+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:60"
+    },
+    {
+      "text": "%sh\nhdfs dfs -ls /user/zeppelin/busra/Join/join/kaynak/",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-05T14:07:40+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Found 2 items\n-rw-r--r--   2 zeppelin hadoop   17997814 2021-07-05 14:06 /user/zeppelin/busra/Join/join/kaynak/accounts.csv\n-rw-r--r--   2 zeppelin hadoop          2 2021-07-05 14:06 /user/zeppelin/busra/Join/join/kaynak/ders\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625494007563_1854664351",
+      "id": "paragraph_1625494007563_1854664351",
+      "dateCreated": "2021-07-05T14:06:47+0000",
+      "dateStarted": "2021-07-05T14:07:40+0000",
+      "dateFinished": "2021-07-05T14:07:42+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:61"
+    },
+    {
+      "text": "%spark\nval RDDaccounts = sc.textFile(\"/user/zeppelin/busra/Join/join/kaynak/accounts.csv\").map(_.split(\",\")).map(fields=>(fields(0),(fields(1),fields(2),fields(3), fields(4), fields(5),fields(6),fields(7),fields(8),fields(9),fields(10), fields(11))))",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:01:21+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mRDDaccounts\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, (String, String, String, String, String, String, String, String, String, String, String))]\u001b[0m = MapPartitionsRDD[712] at map at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625494027761_255062471",
+      "id": "paragraph_1625494027761_255062471",
+      "dateCreated": "2021-07-05T14:07:07+0000",
+      "dateStarted": "2021-07-13T08:01:21+0000",
+      "dateFinished": "2021-07-13T08:01:21+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:62"
+    },
+    {
+      "text": "%spark\nfor (i <- RDDaccounts.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:01:26+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(1,(2008-12-31 15:05:45,2013-12-29 09:53:35,Donald,Becton,2275 Washburn Street,Oakland,CA,94656,5104529635,2013-12-27 15:01:36,2013-12-27 15:01:36))\n(2,(2008-10-31 01:29:51,\\N,Donna,Jones,3885 Elliott Street,Santa Rosa,CA,94978,7072247159,2013-12-27 15:01:36,2013-12-27 15:01:36))\n(3,(2008-12-14 00:49:06,\\N,Dorthy,Chalmers,4073 Whaley Lane,Santa Rosa,CA,94922,7079781240,2013-12-27 15:01:36,2013-12-27 15:01:36))\n(4,(2008-12-13 02:07:05,2014-01-10 21:53:21,Leila,Spencer,1447 Ross Street,San Francisco,CA,94041,4158217430,2013-12-27 15:01:36,2013-12-27 15:01:36))\n(5,(2008-11-30 02:25:21,\\N,Anita,Laughlin,2767 Hill Street,Palo Alto,CA,94318,6502067779,2013-12-27 15:01:36,2013-12-27 15:01:36))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=172",
+              "$$hashKey": "object:591"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625498832580_1202897384",
+      "id": "paragraph_1625498832580_1202897384",
+      "dateCreated": "2021-07-05T15:27:12+0000",
+      "dateStarted": "2021-07-13T08:01:26+0000",
+      "dateFinished": "2021-07-13T08:01:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:63"
+    },
+    {
+      "text": "%spark\nRDDaccounts.count",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:01:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres181\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m = 129707\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=173",
+              "$$hashKey": "object:603"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625494176906_1408195996",
+      "id": "paragraph_1625494176906_1408195996",
+      "dateCreated": "2021-07-05T14:09:36+0000",
+      "dateStarted": "2021-07-13T08:01:34+0000",
+      "dateFinished": "2021-07-13T08:01:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:64"
+    },
+    {
+      "text": "%spark\nfor (i <- lineFieldsRDD.take(5)) {\n    println(i(0) + \" - \" + i(2) + \" - \" + i(5) +\" \"+ i(6) +\" \"+ i(7)  +\" \"+  i(8)  +\" \"+  i(9)  +\" \"+  i(10)  +\" \"+  i(11) +\" \"+  i(12) +\" \"+  i(13) +\" \"+  i(14) )\n    println(\"-------\")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:01:38+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "152.248.182.216 - 105 - \"GET /KBDOC-00211.html HTTP/1.0\" 200 5850 \"http://www.loudacre.com\"  \"Loudacre CSR Browser\"\n-------\n152.248.182.216 - 105 - \"GET /theme.css HTTP/1.0\" 200 11646 \"http://www.loudacre.com\"  \"Loudacre CSR Browser\"\n-------\n103.248.28.233 - 145 - \"GET /KBDOC-00005.html HTTP/1.0\" 200 13725 \"http://www.loudacre.com\"  \"Loudacre CSR Browser\"\n-------\n103.248.28.233 - 145 - \"GET /theme.css HTTP/1.0\" 200 4289 \"http://www.loudacre.com\"  \"Loudacre CSR Browser\"\n-------\n55.197.134.74 - 2306 - \"GET /KBDOC-00054.html HTTP/1.0\" 200 6363 \"http://www.loudacre.com\"  \"Loudacre Mobile Browser\n-------\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=174",
+              "$$hashKey": "object:615"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625560429648_1923570618",
+      "id": "paragraph_1625560429648_1923570618",
+      "dateCreated": "2021-07-06T08:33:49+0000",
+      "dateStarted": "2021-07-13T08:01:38+0000",
+      "dateFinished": "2021-07-13T08:01:38+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:65"
+    },
+    {
+      "text": "%spark\nval userreqs=lineFieldsRDD.map(fields => ((fields(2)), ((fields(5)) + (fields(6)) + (fields(7)))))",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:10+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34muserreqs\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, String)]\u001b[0m = MapPartitionsRDD[714] at map at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625560683121_1563198569",
+      "id": "paragraph_1625560683121_1563198569",
+      "dateCreated": "2021-07-06T08:38:03+0000",
+      "dateStarted": "2021-07-13T08:03:10+0000",
+      "dateFinished": "2021-07-13T08:03:10+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:66"
+    },
+    {
+      "text": "%spark\nfor (i <- userreqs.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:12+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(105,\"GET/KBDOC-00211.htmlHTTP/1.0\")\n(105,\"GET/theme.cssHTTP/1.0\")\n(145,\"GET/KBDOC-00005.htmlHTTP/1.0\")\n(145,\"GET/theme.cssHTTP/1.0\")\n(2306,\"GET/KBDOC-00054.htmlHTTP/1.0\")\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=175",
+              "$$hashKey": "object:636"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625560949425_701100669",
+      "id": "paragraph_1625560949425_701100669",
+      "dateCreated": "2021-07-06T08:42:29+0000",
+      "dateStarted": "2021-07-13T08:03:12+0000",
+      "dateFinished": "2021-07-13T08:03:12+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:67"
+    },
+    {
+      "text": "%spark\nval mergeRDD=RDDaccounts.join(userreqs).map(word => (word,1)).reduceByKey((v1,v2) => v1+v2)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:22+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mmergeRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[((String, ((String, String, String, String, String, String, String, String, String, String, String), String)), Int)]\u001b[0m = ShuffledRDD[719] at reduceByKey at <console>:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625820377518_1296330708",
+      "id": "paragraph_1625820377518_1296330708",
+      "dateCreated": "2021-07-09T08:46:17+0000",
+      "dateStarted": "2021-07-13T08:03:22+0000",
+      "dateFinished": "2021-07-13T08:03:23+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:68"
+    },
+    {
+      "text": "%spark\nfor (i <- mergeRDD.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:26+0000",
+      "progress": 85,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "((57790,((2012-07-18 07:43:26,\\N,Shane,Little,197 My Drive,San Bernardino,CA,92486,9090182239,2013-12-27 15:03:15,2013-12-27 15:03:15),\"GET/sorrento_f01l.jpgHTTP/1.0\")),1)\n((50439,((2012-03-05 08:16:29,\\N,Ronald,Tackett,2668 Java Lane,Los Angeles,CA,90183,2134538679,2013-12-27 15:03:02,2013-12-27 15:03:02),\"GET/ifruit_4_sales.htmlHTTP/1.0\")),1)\n((52237,((2012-05-15 22:36:53,\\N,Sean,Lucht,2087 Ross Street,Stockton,CA,95201,2095111131,2013-12-27 15:03:05,2013-12-27 15:03:05),\"GET/theme.cssHTTP/1.0\")),4)\n((69641,((2012-04-28 13:08:47,2013-11-06 12:07:27,Virgil,Malik,3772 Wildrose Lane,Prescott,AZ,86343,9287294169,2013-12-27 15:03:36,2013-12-27 15:03:36),\"GET/code.jsHTTP/1.0\")),6)\n((63313,((2012-03-18 12:37:58,\\N,Philip,Cobos,1079 Lake Road,Santa Ana,CA,92788,6572761638,2013-12-27 15:03:25,2013-12-27 15:03:25),\"GET/KBDOC-00224.htmlHTTP/1.0\")),1)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=176",
+              "$$hashKey": "object:657"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625820416100_596878047",
+      "id": "paragraph_1625820416100_596878047",
+      "dateCreated": "2021-07-09T08:46:56+0000",
+      "dateStarted": "2021-07-13T08:03:26+0000",
+      "dateFinished": "2021-07-13T08:03:29+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:69"
+    },
+    {
+      "text": "%spark\nval RDDnames = sc.textFile(\"/user/zeppelin/busra/Join/join/kaynak/accounts.csv\").map(_.split(\",\")).map(fields=>(fields(0),(fields(3),fields(4))))",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mRDDnames\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, (String, String))]\u001b[0m = MapPartitionsRDD[723] at map at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625816329955_1542651636",
+      "id": "paragraph_1625816329955_1542651636",
+      "dateCreated": "2021-07-09T07:38:49+0000",
+      "dateStarted": "2021-07-13T08:03:39+0000",
+      "dateFinished": "2021-07-13T08:03:40+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:70"
+    },
+    {
+      "text": "%spark\nfor (i <- RDDnames.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:42+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(1,(Donald,Becton))\n(2,(Donna,Jones))\n(3,(Dorthy,Chalmers))\n(4,(Leila,Spencer))\n(5,(Anita,Laughlin))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=177",
+              "$$hashKey": "object:678"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625816581135_1072392349",
+      "id": "paragraph_1625816581135_1072392349",
+      "dateCreated": "2021-07-09T07:43:01+0000",
+      "dateStarted": "2021-07-13T08:03:43+0000",
+      "dateFinished": "2021-07-13T08:03:43+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:71"
+    },
+    {
+      "text": "%spark\nval displayRDD=RDDnames.join(counts)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:48+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdisplayRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, ((String, String), Int))]\u001b[0m = MapPartitionsRDD[726] at join at <console>:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625560538069_1724569291",
+      "id": "paragraph_1625560538069_1724569291",
+      "dateCreated": "2021-07-06T08:35:38+0000",
+      "dateStarted": "2021-07-13T08:03:48+0000",
+      "dateFinished": "2021-07-13T08:03:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:72"
+    },
+    {
+      "text": "%spark\nfor (i <- displayRDD.take(30))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:51+0000",
+      "progress": 80,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(2828,((Karen,Wade),2))\n(9311,((Jan,Costilla),2))\n(178,((Kimberly,Mulder),16))\n(70076,((Henry,Worley),2))\n(10065,((Melinda,Mendoza),4))\n(3465,((Rick,Hopper),2))\n(24851,((Timothy,Mongillo),2))\n(19082,((Tana,Wallace),2))\n(31831,((Mary,Franklin),6))\n(56364,((Daniel,Meeker),2))\n(43791,((Mose,Rogers),4))\n(29559,((Darlene,Franks),2))\n(48437,((Seth,Jones),4))\n(5461,((Linda,McDaniel),2))\n(136,((Rick,Glynn),8))\n(69089,((Ben,Wolf),2))\n(15114,((Virginia,Batey),2))\n(34504,((Steven,Genova),2))\n(6523,((Geoffrey,Whitsett),6))\n(47528,((Richard,Skelton),2))\n(2769,((Manuel,Waters),4))\n(3553,((Paul,Lemieux),2))\n(18920,((Scott,Childs),2))\n(20307,((Dennis,Watkins),2))\n(9559,((Terry,Sweat),2))\n(941,((Lupe,Olive),2))\n(66695,((Reuben,Wilson),2))\n(53868,((Donald,Anspach),4))\n(55293,((Jason,Sprinkle),4))\n(20536,((Nancy,Wright),2))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=178",
+              "$$hashKey": "object:699"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625816938370_1658711485",
+      "id": "paragraph_1625816938370_1658711485",
+      "dateCreated": "2021-07-09T07:48:58+0000",
+      "dateStarted": "2021-07-13T08:03:51+0000",
+      "dateFinished": "2021-07-13T08:03:51+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:73"
+    },
+    {
+      "text": "%spark\nval keyzipcode=accountRDD.map(line => (line.split(\",\")(8),1)).reduceByKey((x,y) => x+y).map{case(x,y)=> (y,x)}.sortByKey(ascending=false).map{case(x,y)=> (y,x)}",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:03:57+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mkeyzipcode\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Int)]\u001b[0m = MapPartitionsRDD[733] at map at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=179",
+              "$$hashKey": "object:711"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625905054427_1395322688",
+      "id": "paragraph_1625905054427_1395322688",
+      "dateCreated": "2021-07-10T08:17:34+0000",
+      "dateStarted": "2021-07-13T08:03:57+0000",
+      "dateFinished": "2021-07-13T08:03:57+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:74"
+    },
+    {
+      "text": "%spark\nfor (i <- keyzipcode.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:04:10+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(94501,34)\n(94946,33)\n(95404,32)\n(95305,31)\n(92804,31)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=180",
+              "$$hashKey": "object:723"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625821651873_1285000573",
+      "id": "paragraph_1625821651873_1285000573",
+      "dateCreated": "2021-07-09T09:07:31+0000",
+      "dateStarted": "2021-07-13T08:04:10+0000",
+      "dateFinished": "2021-07-13T08:04:11+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:75"
+    },
+    {
+      "text": "%spark\nval nameszipRDD=accountRDD.map(_.split(\",\")).map(fields=>(fields(8),(fields(4),fields(3))))",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:04:15+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mnameszipRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, (String, String))]\u001b[0m = MapPartitionsRDD[735] at map at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625821742599_886519888",
+      "id": "paragraph_1625821742599_886519888",
+      "dateCreated": "2021-07-09T09:09:02+0000",
+      "dateStarted": "2021-07-13T08:04:16+0000",
+      "dateFinished": "2021-07-13T08:04:16+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:76"
+    },
+    {
+      "text": "%spark\nfor (i <- nameszipRDD.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:04:22+0000",
+      "progress": 40,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(94656,(Becton,Donald))\n(94978,(Jones,Donna))\n(94922,(Chalmers,Dorthy))\n(94041,(Spencer,Leila))\n(94318,(Laughlin,Anita))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=181",
+              "$$hashKey": "object:744"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625822865981_1993871482",
+      "id": "paragraph_1625822865981_1993871482",
+      "dateCreated": "2021-07-09T09:27:45+0000",
+      "dateStarted": "2021-07-13T08:04:22+0000",
+      "dateFinished": "2021-07-13T08:04:22+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:77"
+    },
+    {
+      "text": "%spark\nval newkeyzipcodeRDD=keyzipcode.join(nameszipRDD).groupByKey().sortByKey()",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-10T08:29:33+0000",
+      "progress": 40,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mnewkeyzipcodeRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Iterable[(Int, (String, String))])]\u001b[0m = ShuffledRDD[673] at sortByKey at <console>:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=159",
+              "$$hashKey": "object:756"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625822897772_1630344954",
+      "id": "paragraph_1625822897772_1630344954",
+      "dateCreated": "2021-07-09T09:28:17+0000",
+      "dateStarted": "2021-07-10T08:29:33+0000",
+      "dateFinished": "2021-07-10T08:29:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:78"
+    },
+    {
+      "text": "%spark\nfor (i <- newkeyzipcodeRDD.take(5))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-10T08:29:36+0000",
+      "progress": 18,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(85000,CompactBuffer((13,(Willson,Leon)), (13,(Clark,Ronald)), (13,(Rush,Juanita)), (13,(Woodhouse,Roger)), (13,(Baptist,Colin)), (13,(King,Percy)), (13,(Carmack,David)), (13,(Milan,Ana)), (13,(McCurdy,Kendra)), (13,(Pitts,Robert)), (13,(Hopkins,Leslie)), (13,(Butler,Paul)), (13,(Barth,Phyllis))))\n(85001,CompactBuffer((16,(Cross,David)), (16,(Pritchett,Danny)), (16,(Sistrunk,Lennie)), (16,(Sweet,Jeffery)), (16,(Buckles,Nancy)), (16,(James,Katie)), (16,(Tutor,Anthony)), (16,(Battle,Mark)), (16,(Hiller,Carol)), (16,(Landa,Nancy)), (16,(Marks,Sergio)), (16,(Sprague,Barbara)), (16,(Greenwell,Angela)), (16,(Helms,Sabrina)), (16,(Allen,Sharon)), (16,(Waller,Gregory))))\n(85002,CompactBuffer((16,(Whitmore,Alan)), (16,(Chandler,Tara)), (16,(Robinson,Diane)), (16,(Brown,Henry)), (16,(Sisson,Lacey)), (16,(Root,Elfriede)), (16,(Lynch,Barbara)), (16,(Dixon,Jeremy)), (16,(Hampton,David)), (16,(Norman,Elizabeth)), (16,(Granados,Lynnette)), (16,(Sullivan,Martha)), (16,(Novak,Grant)), (16,(Johnson,Katrina)), (16,(McConville,Jennifer)), (16,(Sherer,Rose))))\n(85003,CompactBuffer((12,(Jenkins,Thad)), (12,(Rick,Edward)), (12,(Lindsay,Ivy)), (12,(Oneil,Beth)), (12,(Post,Elizabeth)), (12,(Taylor,Maude)), (12,(Smith,Wesley)), (12,(Wolfe,Gilbert)), (12,(Jenkins,Richard)), (12,(Carmichael,David)), (12,(Jaimes,Earl)), (12,(Jennings,Guillermo))))\n(85004,CompactBuffer((12,(Morris,Eric)), (12,(Reiser,Hazel)), (12,(Gregg,Alicia)), (12,(Preston,Elizabeth)), (12,(Hass,Julie)), (12,(Gunn,Debra)), (12,(Frye,Terry)), (12,(Reyes,Jack)), (12,(Thomas,Brenda)), (12,(Stowe,Lloyd)), (12,(Vaughn,Tommy)), (12,(Edmond,Barry))))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=160",
+              "$$hashKey": "object:768"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625823028616_1022827419",
+      "id": "paragraph_1625823028616_1022827419",
+      "dateCreated": "2021-07-09T09:30:28+0000",
+      "dateStarted": "2021-07-10T08:29:36+0000",
+      "dateFinished": "2021-07-10T08:29:37+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:79"
+    },
+    {
+      "text": "%spark\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-09T09:31:08+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625823068030_95831922",
+      "id": "paragraph_1625823068030_95831922",
+      "dateCreated": "2021-07-09T09:31:08+0000",
+      "status": "READY",
+      "$$hashKey": "object:80"
+    }
+  ],
+  "name": "de-busraturker-proje-join",
+  "id": "2G9RNC4C1",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/de-busraturker-proje-join"
+}

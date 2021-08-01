@@ -1,0 +1,292 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%spark\nimport org.apache.spark.streaming._\nimport org.apache.spark.{SparkConf, SparkContext}\nimport org.apache.spark.SparkContext._",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-24T21:12:42+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.streaming._\nimport org.apache.spark.{SparkConf, SparkContext}\nimport org.apache.spark.SparkContext._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626693586241_2092449560",
+      "id": "paragraph_1626693586241_2092449560",
+      "dateCreated": "2021-07-19T11:19:46+0000",
+      "dateStarted": "2021-07-24T21:12:42+0000",
+      "dateFinished": "2021-07-24T21:12:42+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:64"
+    },
+    {
+      "text": "%spark\nsc.setLogLevel(\"ERROR\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-24T21:12:45+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626438237001_1170699477",
+      "id": "paragraph_1626438237001_1170699477",
+      "dateCreated": "2021-07-16T12:23:57+0000",
+      "dateStarted": "2021-07-24T21:12:45+0000",
+      "dateFinished": "2021-07-24T21:12:46+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:65"
+    },
+    {
+      "text": "%spark\nval ssc = new StreamingContext(sc,Seconds(10))",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-24T21:12:48+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mssc\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.streaming.StreamingContext\u001b[0m = org.apache.spark.streaming.StreamingContext@3de6e839\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626438258811_1600750087",
+      "id": "paragraph_1626438258811_1600750087",
+      "dateCreated": "2021-07-16T12:24:18+0000",
+      "dateStarted": "2021-07-24T21:12:48+0000",
+      "dateFinished": "2021-07-24T21:12:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:66"
+    },
+    {
+      "text": "%spark\nssc.checkpoint(\"/user/zeppelin/busra/spark/checkpoint/\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-24T21:12:51+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626438278911_1011412725",
+      "id": "paragraph_1626438278911_1011412725",
+      "dateCreated": "2021-07-16T12:24:38+0000",
+      "dateStarted": "2021-07-24T21:12:51+0000",
+      "dateFinished": "2021-07-24T21:12:51+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:67"
+    },
+    {
+      "text": "%spark\nval Logcounts = ssc.textFileStream(\"/user/zeppelin/busra/spark/\").map(line => (line.split(\" \")(2),1)).reduceByKeyAndWindow((x,y) => x+y, (x,y) => x-y, Seconds (60), Seconds (10))",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-24T21:12:54+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mLogcounts\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.streaming.dstream.DStream[(String, Int)]\u001b[0m = org.apache.spark.streaming.dstream.ReducedWindowedDStream@bddfe53\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626438300935_1945983206",
+      "id": "paragraph_1626438300935_1945983206",
+      "dateCreated": "2021-07-16T12:25:00+0000",
+      "dateStarted": "2021-07-24T21:12:54+0000",
+      "dateFinished": "2021-07-24T21:12:54+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:68"
+    },
+    {
+      "text": "%spark\nssc.start()",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-24T21:13:12+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "java.lang.IllegalStateException: StreamingContext has already been stopped\n  at org.apache.spark.streaming.StreamingContext.start(StreamingContext.scala:615)\n  ... 48 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626438317943_275360529",
+      "id": "paragraph_1626438317943_275360529",
+      "dateCreated": "2021-07-16T12:25:17+0000",
+      "dateStarted": "2021-07-24T21:13:12+0000",
+      "dateFinished": "2021-07-24T21:13:12+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:69"
+    },
+    {
+      "text": "%spark\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-19T11:00:14+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1626692414082_1457396507",
+      "id": "paragraph_1626692414082_1457396507",
+      "dateCreated": "2021-07-19T11:00:14+0000",
+      "status": "READY",
+      "$$hashKey": "object:70"
+    }
+  ],
+  "name": "de-busraturker-proje-spark-streaming",
+  "id": "2GB1GTAF1",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/de-busraturker-proje-spark-streaming"
+}

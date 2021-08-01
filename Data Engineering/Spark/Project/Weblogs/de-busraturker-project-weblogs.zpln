@@ -1,0 +1,568 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%sh\ngit clone https://github.com/BusraTurker/weblog.git",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-03T12:51:47+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Cloning into 'weblog'...\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625316607908_2074471742",
+      "id": "paragraph_1625316607908_2074471742",
+      "dateCreated": "2021-07-03T12:50:07+0000",
+      "dateStarted": "2021-07-03T12:51:47+0000",
+      "dateFinished": "2021-07-03T12:51:49+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:52"
+    },
+    {
+      "text": "%sh\nhdfs dfs -ls /user/zeppelin/busra/",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-03T12:54:18+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Found 27 items\n-rw-r--r--   2 zeppelin hadoop     495382 2021-07-03 09:15 /user/zeppelin/busra/2013-09-20.log\n-rw-r--r--   2 zeppelin hadoop     492353 2021-07-03 09:15 /user/zeppelin/busra/2013-09-21.log\n-rw-r--r--   2 zeppelin hadoop     539318 2021-07-03 09:15 /user/zeppelin/busra/2013-09-22.log\n-rw-r--r--   2 zeppelin hadoop     505084 2021-07-03 09:15 /user/zeppelin/busra/2013-09-23.log\n-rw-r--r--   2 zeppelin hadoop     492577 2021-07-03 09:15 /user/zeppelin/busra/2013-09-24.log\n-rw-r--r--   2 zeppelin hadoop     491070 2021-07-03 09:15 /user/zeppelin/busra/2013-09-25.log\n-rw-r--r--   2 zeppelin hadoop     526642 2021-07-03 09:15 /user/zeppelin/busra/2013-09-26.log\n-rw-r--r--   2 zeppelin hadoop     509532 2021-07-03 09:15 /user/zeppelin/busra/2013-09-27.log\n-rw-r--r--   2 zeppelin hadoop     495859 2021-07-03 09:15 /user/zeppelin/busra/2013-09-28.log\n-rw-r--r--   2 zeppelin hadoop     484665 2021-07-03 09:15 /user/zeppelin/busra/2013-09-29.log\n-rw-r--r--   2 zeppelin hadoop     528844 2021-07-03 09:15 /user/zeppelin/busra/2013-09-30.log\n-rw-r--r--   2 zeppelin hadoop     488117 2021-07-03 09:15 /user/zeppelin/busra/2013-10-01.log\n-rw-r--r--   2 zeppelin hadoop     530933 2021-07-03 09:15 /user/zeppelin/busra/2013-10-02.log\n-rw-r--r--   2 zeppelin hadoop     524702 2021-07-03 09:15 /user/zeppelin/busra/2013-10-03.log\n-rw-r--r--   2 zeppelin hadoop     502245 2021-07-03 09:15 /user/zeppelin/busra/2013-10-04.log\n-rw-r--r--   2 zeppelin hadoop     513880 2021-07-03 09:15 /user/zeppelin/busra/2013-10-05.log\n-rw-r--r--   2 zeppelin hadoop     492793 2021-07-03 09:15 /user/zeppelin/busra/2013-10-06.log\n-rw-r--r--   2 zeppelin hadoop     492846 2021-07-03 09:15 /user/zeppelin/busra/2013-10-07.log\n-rw-r--r--   2 zeppelin hadoop     526754 2021-07-03 09:15 /user/zeppelin/busra/2013-10-08.log\n-rw-r--r--   2 zeppelin hadoop     532931 2021-07-03 09:15 /user/zeppelin/busra/2013-10-09.log\n-rw-r--r--   2 zeppelin hadoop     525057 2021-07-03 09:15 /user/zeppelin/busra/2013-10-10.log\n-rw-r--r--   2 zeppelin hadoop     527589 2021-07-03 09:15 /user/zeppelin/busra/2013-10-11.log\n-rw-r--r--   2 zeppelin hadoop     396896 2021-06-23 13:38 /user/zeppelin/busra/busra_airlines.dat\n-rw-r--r--   2 zeppelin hadoop    1127225 2021-06-23 13:38 /user/zeppelin/busra/busra_airports.dat\n-rw-r--r--   2 zeppelin hadoop    2377148 2021-06-23 13:38 /user/zeppelin/busra/busra_routes.dat\n-rw-r--r--   2 zeppelin hadoop       2960 2021-07-02 17:40 /user/zeppelin/busra/haber.txt\n-rw-r--r--   2 zeppelin hadoop       5812 2021-06-23 09:41 /user/zeppelin/busra/kv1.txt\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625309493580_1784281857",
+      "id": "paragraph_1625309493580_1784281857",
+      "dateCreated": "2021-07-03T10:51:33+0000",
+      "dateStarted": "2021-07-03T12:54:18+0000",
+      "dateFinished": "2021-07-03T12:54:20+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:53"
+    },
+    {
+      "text": "%spark\nval weblogRDD = sc.textFile(\"/user/zeppelin/busra/*.log\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T07:59:13+0000",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mweblogRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m = /user/zeppelin/busra/*.log MapPartitionsRDD[691] at textFile at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625309517736_184828256",
+      "id": "paragraph_1625309517736_184828256",
+      "dateCreated": "2021-07-03T10:51:57+0000",
+      "dateStarted": "2021-07-13T07:59:13+0000",
+      "dateFinished": "2021-07-13T07:59:13+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:54"
+    },
+    {
+      "text": "%spark\nval jpglogsRDD=weblogRDD.map(_.contains(\"jpg\"))",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T07:59:16+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mjpglogsRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[Boolean]\u001b[0m = MapPartitionsRDD[692] at map at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625309647120_1123596981",
+      "id": "paragraph_1625309647120_1123596981",
+      "dateCreated": "2021-07-03T10:54:07+0000",
+      "dateStarted": "2021-07-13T07:59:16+0000",
+      "dateFinished": "2021-07-13T07:59:17+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:55"
+    },
+    {
+      "text": "%spark\nfor (i <- jpglogsRDD.take(15))\n    println(i)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T07:59:19+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "false\nfalse\nfalse\nfalse\nfalse\nfalse\nfalse\nfalse\nfalse\nfalse\nfalse\ntrue\nfalse\nfalse\nfalse\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=165",
+              "$$hashKey": "object:266"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625314682295_262054175",
+      "id": "paragraph_1625314682295_262054175",
+      "dateCreated": "2021-07-03T12:18:02+0000",
+      "dateStarted": "2021-07-13T07:59:19+0000",
+      "dateFinished": "2021-07-13T07:59:20+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:56"
+    },
+    {
+      "text": "%spark\nval lengthRDD=weblogRDD.map(_.length)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T07:59:27+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mlengthRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[Int]\u001b[0m = MapPartitionsRDD[693] at map at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625311161254_1216187855",
+      "id": "paragraph_1625311161254_1216187855",
+      "dateCreated": "2021-07-03T11:19:21+0000",
+      "dateStarted": "2021-07-13T07:59:27+0000",
+      "dateFinished": "2021-07-13T07:59:27+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:57"
+    },
+    {
+      "text": "%spark\nfor (i <- lengthRDD.take(5))\n  println(\"String Length is : \" + i )",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T07:59:31+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "String Length is : 142\nString Length is : 136\nString Length is : 142\nString Length is : 134\nString Length is : 157\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=166",
+              "$$hashKey": "object:287"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625314745883_331834685",
+      "id": "paragraph_1625314745883_331834685",
+      "dateCreated": "2021-07-03T12:19:05+0000",
+      "dateStarted": "2021-07-13T07:59:31+0000",
+      "dateFinished": "2021-07-13T07:59:31+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:58"
+    },
+    {
+      "text": "%spark\nval lineFieldsRDD=weblogRDD.map(_.split(' '))",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T07:59:35+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mlineFieldsRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[Array[String]]\u001b[0m = MapPartitionsRDD[694] at map at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625312771362_444342380",
+      "id": "paragraph_1625312771362_444342380",
+      "dateCreated": "2021-07-03T11:46:11+0000",
+      "dateStarted": "2021-07-13T07:59:35+0000",
+      "dateFinished": "2021-07-13T07:59:35+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:59"
+    },
+    {
+      "text": "%spark\nfor (i <- lineFieldsRDD.take(5)) {\n    println(i(0) + \" - \" + i(2) + \" - \" + i(5) +\" \"+ i(6) +\" \"+ i(7)  +\" \"+  i(8)  +\" \"+  i(9)  +\" \"+  i(10)  +\" \"+  i(11) +\" \"+  i(12) +\" \"+  i(13) +\" \"+  i(14) )\n    println(\"-------\")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T07:59:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "152.248.182.216 - 105 - \"GET /KBDOC-00211.html HTTP/1.0\" 200 5850 \"http://www.loudacre.com\"  \"Loudacre CSR Browser\"\n-------\n152.248.182.216 - 105 - \"GET /theme.css HTTP/1.0\" 200 11646 \"http://www.loudacre.com\"  \"Loudacre CSR Browser\"\n-------\n103.248.28.233 - 145 - \"GET /KBDOC-00005.html HTTP/1.0\" 200 13725 \"http://www.loudacre.com\"  \"Loudacre CSR Browser\"\n-------\n103.248.28.233 - 145 - \"GET /theme.css HTTP/1.0\" 200 4289 \"http://www.loudacre.com\"  \"Loudacre CSR Browser\"\n-------\n55.197.134.74 - 2306 - \"GET /KBDOC-00054.html HTTP/1.0\" 200 6363 \"http://www.loudacre.com\"  \"Loudacre Mobile Browser\n-------\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=167",
+              "$$hashKey": "object:308"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625313752000_369770112",
+      "id": "paragraph_1625313752000_369770112",
+      "dateCreated": "2021-07-03T12:02:32+0000",
+      "dateStarted": "2021-07-13T07:59:40+0000",
+      "dateFinished": "2021-07-13T07:59:40+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:60"
+    },
+    {
+      "text": "%spark\nval ipRDD=weblogRDD.map(_.split(' ')).map(field=>field(0)).distinct",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:00:07+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mipRDD\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m = MapPartitionsRDD[701] at distinct at <console>:24\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625315160026_893509525",
+      "id": "paragraph_1625315160026_893509525",
+      "dateCreated": "2021-07-03T12:26:00+0000",
+      "dateStarted": "2021-07-13T08:00:08+0000",
+      "dateFinished": "2021-07-13T08:00:08+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:61"
+    },
+    {
+      "text": "%spark\nfor (ip <- ipRDD.take(15))\n    println(ip)",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-13T08:00:10+0000",
+      "progress": 47,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "106.214.15.143\n236.77.238.152\n25.242.8.193\n67.203.92.203\n171.226.6.221\n6.255.252.12\n136.115.148.138\n208.98.76.242\n123.126.179.60\n178.12.170.50\n18.184.218.180\n251.191.37.209\n252.163.66.230\n26.104.88.49\n100.153.106.199\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://istdsa-de-m.us-central1-c.c.mysa-302309.internal:34109/jobs/job?id=169",
+              "$$hashKey": "object:329"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625316153466_7614713",
+      "id": "paragraph_1625316153466_7614713",
+      "dateCreated": "2021-07-03T12:42:33+0000",
+      "dateStarted": "2021-07-13T08:00:10+0000",
+      "dateFinished": "2021-07-13T08:00:11+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:62"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-05T12:34:17+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625316595516_348371634",
+      "id": "paragraph_1625316595516_348371634",
+      "dateCreated": "2021-07-03T12:49:55+0000",
+      "status": "READY",
+      "$$hashKey": "object:63"
+    }
+  ],
+  "name": "de-busraturker-proje-weblogs",
+  "id": "2GC57X3QT",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/de-busraturker-proje-weblogs"
+}
